@@ -13,8 +13,8 @@ describe('testing localStorage', () => {
       cy.window().its('localStorage', { timeout: 5000 }).should('have.property', 'key')
       cy.getAllLocalStorage().then((result) => {
           expect(result).to.deep.equal({
-              'http://localhost:3000': {
-              key: 'value',
+                'https://example.cypress.io': {
+                key: 'value',
               },
           })
       })
