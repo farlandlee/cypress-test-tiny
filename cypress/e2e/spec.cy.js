@@ -10,6 +10,7 @@ describe('testing localStorage', () => {
               win.localStorage.setItem('key', 'value')
           },
       })
+      cy.window().its('localStorage', { timeout: 5000 }).should('have.property', 'key')
       cy.getAllLocalStorage().then((result) => {
           expect(result).to.deep.equal({
               'http://localhost:3000': {
